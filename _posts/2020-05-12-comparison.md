@@ -194,7 +194,7 @@ list = str.split()
 
 java
 ```java
-String.join("", list);
+String str = String.join("", list);
 String[] strs = str.split(" ");
 ```
 
@@ -451,6 +451,23 @@ PriorityQueue<Integer> pq = new PriorityQueue<>();
 pq.add(value);
 Integer v = pq.poll();
 Integer v = pq.peek();
+
+PriorityQueue<Person> pq = new PriorityQueue<>();
+class Person implements Comparable<Person> {
+    private int salary;
+    @override
+    public int compareTo(Person p) {
+        return this.salary - p.salary;
+    }
+}
+
+PriorityQueue<String> pq = new PriorityQueue<>(10, (p1, p2) -> (p1.length() - p2.length());
+PriorityQueue<String> pq = new PriorityQueue<>(10, new Comparator<String>() {
+    @override
+    public int compare(String p1, String p2) {
+        return p1.length() - p2.length();
+    }
+});
 ```
 
 ## Random
